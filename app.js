@@ -160,4 +160,8 @@ app.get("/Stats", async (req, res) => {
 });  
 
 // Start Server
-app.listen(3000, () => console.log("✅ Server running on http://localhost:3000"));
+// In app.js (or your server entry file)
+const PORT = process.env.PORT || 3000; // Use port 3000 for local development
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
