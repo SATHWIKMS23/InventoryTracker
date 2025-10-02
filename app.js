@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 
 // --- CORRECTED MODEL IMPORTS ---
 const User = require("./models/User");
-const Item = require("./models/item");
+const Item = require("./models/Item");
 // -------------------------------
 
 const app = express();
