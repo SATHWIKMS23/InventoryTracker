@@ -21,7 +21,19 @@
             
             <div class="form-group">
                 <label for="category">Category:</label>
-                <input type="text" id="category" name="category" value="<%= item.category %>" required>
+                <select id="category" name="category" required>
+                    <option value="">--Select Category--</option>
+                    <option value="Electronics" <%= item.category === "Electronics" ? "selected" : "" %>>Electronics</option>
+                    <option value="Fashion" <%= item.category === "Fashion" ? "selected" : "" %>>Fashion</option>
+                    <option value="Groceries" <%= item.category === "Groceries" ? "selected" : "" %>>Groceries</option>
+                    <option value="Books" <%= item.category === "Books" ? "selected" : "" %>>Books</option>
+                    <option value="Furniture" <%= item.category === "Furniture" ? "selected" : "" %>>Furniture</option>
+                    <option value="Toys" <%= item.category === "Toys" ? "selected" : "" %>>Toys</option>
+                    <option value="Sports" <%= item.category === "Sports" ? "selected" : "" %>>Sports</option>
+                    <option value="Health" <%= item.category === "Health" ? "selected" : "" %>>Health</option>
+                    <option value="Stationery" <%= item.category === "Stationery" ? "selected" : "" %>>Stationery</option>
+                    <option value="Others" <%= item.category === "Others" ? "selected" : "" %>>Others</option>
+                </select>
             </div>
             
             <div class="form-group">
@@ -32,7 +44,6 @@
             <div class="form-group">
                 <label for="dateAcquired">Date Acquired:</label>
                 <% 
-                    // Format Date object to YYYY-MM-DD for input[type="date"]
                     const d = new Date(item.dateAcquired);
                     const formattedDate = d.toISOString().substring(0, 10);
                 %>

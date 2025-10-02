@@ -1,96 +1,147 @@
-/* public/Stylesheets/forms.css (Recommended Filename) */
+/* ---------- General Styles ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    margin: 0;
+    padding: 0;
+}
 
-/* --- Layout & Headers --- */
 .container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
+    max-width: 550px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 35px 45px;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
-    color: #2c3e50; /* Primary header color */
-    font-size: 2rem;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
 }
 
-/* --- Form Container --- */
+/* ---------- Form Styles ---------- */
 .item-form {
-    max-width: 600px; /* Optimal width for readability */
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    /* Soft shadow to lift the form off the background */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
-    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Form Groups and Labels --- */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 8px;
-    font-weight: 700;
-    color: #34495e;
-    font-size: 0.95rem;
-}
-
-/* --- Input Fields --- */
-.item-form input[type="text"],
-.item-form input[type="number"],
-.item-form input[type="date"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dcdfe6;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    font-size: 1rem;
-    color: #34495e;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-/* Input focus state */
-.item-form input:focus {
-    border-color: #3498db; /* Primary Blue focus highlight */
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    outline: none;
-}
-
-/* --- Buttons --- */
-
-/* Base button style (assuming this is defined in index.css) */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: 600;
+    color: #334155;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59,130,246,0.35);
+    background: #ffffff;
+}
+
+/* ---------- Buttons Styles ---------- */
+.btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
+    transition: all 0.3s ease;
     border: none;
-    transition: all 0.2s ease-in-out;
-    margin-right: 10px; 
+    display: inline-block;
+    min-width: 130px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
 .btn-primary {
-    /* Green for "Save Changes" */
-    background-color: #2ecc71; 
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
     color: white;
 }
+
 .btn-primary:hover {
-    background-color: #27ae60;
-    box-shadow: 0 2px 5px rgba(46, 204, 113, 0.4);
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .btn-secondary {
-    /* Grey for "Cancel" */
-    background-color: #bdc3c7; 
-    color: #2c3e50;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    color: white;
 }
+
 .btn-secondary:hover {
-    background-color: #95a5a6;
+    background: linear-gradient(135deg, #475569, #64748b);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
+/* ---------- Button Alignment ---------- */
+.item-form .btn {
+    margin-top: 15px;
+}
+
+.item-form .btn + .btn {
+    margin-left: 12px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 25px;
+    }
+    .btn {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-bottom: 12px;
+    }
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+/* ---------- End of Styles ---------- */

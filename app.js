@@ -147,5 +147,17 @@ app.delete("/delete/:id", async (req, res) => {
     res.redirect("/inventory");
 });
 
+app.get("/Stats", async (req, res) => {
+    if (!req.session.user) return res.redirect("/login");
+    const items = await Item.find({ user: req.session.user._id });
+    const totalItems = items.length;
+    const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+    const categoryCount = {};       
+    items.forEach(item => {
+        categoryCount[item.category] = (categoryCount[item.category] || 0) + 1;
+    });
+    res.render("stats", { title: "Statistics", totalItems, totalQuantity, categoryCount, user: req.session.user });
+});  
+
 // Start Server
 app.listen(3000, () => console.log("✅ Server running on http://localhost:3000"));
