@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/Stylesheets/index.css">
+    <link rel="stylesheet" href="/Stylesheets/edit.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <h1>Edit Item: <%= item.name %></h1>
+        
+        <form action="/edit/<%= item._id %>?_method=PUT" method="POST" class="item-form">
+            <div class="form-group">
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" name="name" value="<%= item.name %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" value="<%= item.category %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>" required min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="dateAcquired">Date Acquired:</label>
+                <% 
+                    // Format Date object to YYYY-MM-DD for input[type="date"]
+                    const d = new Date(item.dateAcquired);
+                    const formattedDate = d.toISOString().substring(0, 10);
+                %>
+                <input type="date" id="dateAcquired" name="dateAcquired" value="<%= formattedDate %>">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="/inventory" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

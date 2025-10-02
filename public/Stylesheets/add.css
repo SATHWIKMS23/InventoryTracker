@@ -1,0 +1,93 @@
+/* public/Stylesheets/add.css - Clean Form Redesign */
+
+/* --- Form Container --- */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #2c3e50; /* Primary header color */
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.item-form {
+    max-width: 600px; /* Slightly wider form */
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    /* Clean, soft shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #e0e0e0;
+}
+
+/* --- Form Groups and Labels --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #34495e; /* Darker label text */
+    font-size: 0.95rem;
+}
+
+/* --- Input Fields --- */
+.item-form input[type="text"],
+.item-form input[type="number"],
+.item-form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus state for inputs */
+.item-form input:focus {
+    border-color: #3498db; /* Blue focus highlight */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+/* --- Buttons --- */
+
+/* Base button style (assuming this is defined in index.css) */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    margin-right: 15px; /* Spacing between buttons */
+}
+
+.btn-primary {
+    background-color: #3498db; /* Primary Action Blue */
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #2980b9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: #bdc3c7; /* Grey/Cancel */
+    color: #2c3e50;
+}
+.btn-secondary:hover {
+    background-color: #95a5a6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/Stylesheets/index.css">
+    <link rel="stylesheet" href="/Stylesheets/inventory.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <h1>Your Inventory</h1>
+        <a href="/add" class="add-btn">Add New Item</a>
+
+        <% if (items.length > 0) { %>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Date Acquired</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach(item => { %>
+                        <tr>
+                            <td><%= item.name %></td>
+                            <td><%= item.category %></td>
+                            <td><%= item.quantity %></td>
+                            <td><%= new Date(item.dateAcquired).toLocaleDateString() %></td>
+                            
+                            <td class="action-buttons">
+                                <div class="action-group">
+                                    <a href="/edit/<%= item._id %>" class="btn-action btn-edit">Edit</a>
+                                    
+                                    <form action="/delete/<%= item._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete <%= item.name %>?');">
+                                        <button type="submit" class="btn-action btn-delete">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="no-items">Your inventory is empty. Click "Add New Item" to get started!</p>
+        <% } %>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

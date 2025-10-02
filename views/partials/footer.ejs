@@ -1,0 +1,45 @@
+<footer>
+    <p>&copy; <%= new Date().getFullYear() %> Inventory Tracker. All rights reserved.</p>
+</footer>
+<style>
+/* Simple CSS for the header/footer, you can move this to index.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3f51b5;
+    padding: 10px 20px;
+}
+.logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+.navbar ul li a:hover {
+    background-color: #303f9f;
+    border-radius: 5px;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>

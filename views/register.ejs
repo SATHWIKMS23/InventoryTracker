@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/Stylesheets/register.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Create Account</h1>
+            <p class="subtitle">Join the Minimalist Vault and start tracking your items.</p>
+
+            <% if (error) { %>
+                <div class="error"><%= error %></div>
+            <% } %>
+
+            <form action="/register" method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn primary">Register</button>
+            </form>
+
+            <p class="switch-link">
+                Already have an account? <a href="/login">Login here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

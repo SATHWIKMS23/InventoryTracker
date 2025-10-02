@@ -1,0 +1,133 @@
+/* ---------- Base Styles ---------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f9fafb, #e2e8f0);
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* ---------- Header ---------- */
+.main-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.main-header p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ---------- Content ---------- */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 2rem;
+}
+
+.welcome-box {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    max-width: 500px;
+    width: 100%;
+}
+
+.welcome-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.welcome-box p {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Buttons ---------- */
+.portal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 0.9rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.7rem;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Primary (Blue) */
+.btn.primary {
+    background-color: #2563eb;
+    color: #fff;
+}
+.btn.primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Secondary (Gray/Neutral) */
+.btn.secondary {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border: 2px solid #cbd5e1;
+}
+.btn.secondary:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Tertiary (Red for Logout) */
+.btn.tertiary {
+    background-color: #ef4444;
+    color: #fff;
+}
+.btn.tertiary:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .welcome-box {
+        padding: 1.5rem;
+    }
+    .welcome-box h2 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+}

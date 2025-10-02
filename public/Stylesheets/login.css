@@ -1,0 +1,133 @@
+/* ---------- Base Layout ---------- */
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f9fafb, #e2e8f0);
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ---------- Auth Container ---------- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.auth-box h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 6px rgba(37,117,252,0.3);
+}
+
+/* ---------- Button ---------- */
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37,117,252,0.3);
+}
+
+/* ---------- Error ---------- */
+.error {
+    background: #ffe9e9;
+    color: #c62828;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ---------- Switch Link ---------- */
+.switch-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.switch-link a {
+    color: #2575fc;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.switch-link a:hover {
+    color: #6a11cb;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}

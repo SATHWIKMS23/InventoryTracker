@@ -1,0 +1,152 @@
+/* public/Stylesheets/inventory.css - MODERN REDESIGN */
+
+/* --- Base Layout (Often in index.css, but included here for completeness) --- */
+body {
+    background-color: #f4f6f9; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* --- Add New Item Button --- */
+.add-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    background-color: #3498db; /* Primary Action Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+.add-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* --- Inventory Table --- */
+.inventory-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-table thead {
+    background-color: #ecf0f1;
+}
+
+.inventory-table th, 
+.inventory-table td {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f2f4f7;
+}
+
+.inventory-table th {
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.inventory-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.inventory-table tbody tr:nth-child(even) {
+    background-color: #fafbfd;
+}
+
+.inventory-table tbody tr:hover {
+    background-color: #e9eff5;
+    transition: background-color 0.2s ease;
+}
+
+/* --- Action Buttons FIX (Same Size) --- */
+.action-buttons {
+    text-align: center;
+    white-space: nowrap;
+    min-width: 140px; /* Ensures column spacing */
+}
+
+.action-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.action-group form {
+    margin: 0;
+    display: flex; /* Ensures the form container aligns with the anchor tag */
+}
+
+.btn-action {
+    /* Fixed dimensions for uniform appearance */
+    width: 60px; 
+    height: 30px; 
+    line-height: 30px; /* Centers text vertically */
+    padding: 0; /* Override default padding */
+    box-sizing: border-box; 
+    text-align: center; 
+    
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Edit Button (Soft Green) */
+.btn-edit {
+    background-color: #2ecc71; 
+    color: #fff;
+}
+.btn-edit:hover {
+    background-color: #27ae60;
+}
+
+/* Delete Button (Soft Red) */
+.btn-delete {
+    background-color: #e74c3c; 
+    color: #fff;
+}
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* --- Empty State --- */
+.no-items {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 25px;
+}

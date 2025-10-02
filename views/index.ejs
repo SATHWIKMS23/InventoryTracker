@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/Stylesheets/index.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>📦 The Minimalist Vault</h1>
+        <p>Your personal inventory tracker, simplified.</p>
+    </header>
+
+    <div class="content">
+        <% if (user) { %>
+            <!-- Logged in -->
+            <div class="welcome-box">
+                <h2>Welcome, <%= user.username %> 👋</h2>
+                <p>What would you like to do today?</p>
+                <div class="portal-buttons">
+                    <a href="/inventory" class="btn primary">View Inventory</a>
+                    <a href="/add" class="btn secondary">Add New Item</a>
+                    <a href="/logout" class="btn tertiary">Logout</a>
+                </div>
+            </div>
+        <% } else { %>
+            <!-- Not logged in -->
+            <div class="welcome-box">
+                <h2>Welcome to Inventory Tracker 👋</h2>
+                <p>Please log in or create a new account to continue.</p>
+                <div class="portal-buttons">
+                    <a href="/login" class="btn primary">Login</a>
+                    <a href="/register" class="btn secondary">Create New User</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
