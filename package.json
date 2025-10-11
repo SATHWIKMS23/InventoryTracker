@@ -1,20 +1,27 @@
 {
-  "name": "inventorytracker",
+  "name": "inventory-management-app",
   "version": "1.0.0",
+  "description": "A simple inventory management system.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "NODE_ENV=development node app.js"
   },
-  "author": "Sathwik M S",
+  "keywords": [
+    "express",
+    "mongodb",
+    "ejs"
+  ],
+  "author": "",
   "license": "ISC",
-  "description": "The Inventory Tracker is a full-stack web application designed to help users manage their personal or small business inventory. Users can register, log in, and track various items, including details like name, category, quantity, and date acquired. The application is built using the MERN Stack principles (MongoDB, Express, Node.js) with EJS used for templating.",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "dotenv": "^17.2.3",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
     "method-override": "^3.0.0",
-    "mongoose": "^8.18.3"
+    "mongoose": "^8.2.1"
   }
 }
