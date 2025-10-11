@@ -246,7 +246,7 @@ app.use((req, res, next) => {
 
 
 // Start Server
-const PORT_ENV = PORT || 3000; 
+const MONGO = MONGO_URI || PORT; 
 app.listen(PORT_ENV, () => {
     console.log(`Server is running in ${NODE_ENV} mode on port ${PORT_ENV}`);
     console.log(`Access at: http://localhost:${PORT_ENV}`);
