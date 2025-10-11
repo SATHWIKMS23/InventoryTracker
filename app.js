@@ -18,6 +18,7 @@ const Item = require("./models/Item");
 
 const app = express();
 // Destructure variables from process.env for clarity and consistent access
+// NOTE: We rely on the 'PORT' variable being available here
 const { MONGO_URI, PORT, SESSION_SECRET, NODE_ENV } = process.env;
 
 // Determine environment status
@@ -83,7 +84,8 @@ const isAuthenticated = (req, res, next) => {
 };
 // --------------------------------------------------
 
-// ---------- Routes (as provided, but simplified/commented for clarity) ----------
+// ---------- Routes (omitted for brevity) ----------
+// ... (All your routes here)
 
 // Home
 app.get("/", (req, res) => {
@@ -246,8 +248,10 @@ app.use((req, res, next) => {
 
 
 // Start Server
-const MONGO = MONGO_URI || PORT; 
-app.listen(PORT_ENV, () => {
-    console.log(`Server is running in ${NODE_ENV} mode on port ${PORT_ENV}`);
-    console.log(`Access at: http://localhost:${PORT_ENV}`);
+// FIX APPLIED HERE: Define the port variable (PORT is available from destructuring)
+const listenPort = PORT || 3000; 
+
+app.listen(listenPort, () => {
+    console.log(`Server is running in ${NODE_ENV} mode on port ${listenPort}`);
+    console.log(`Access at: http://localhost:${listenPort}`);
 });
