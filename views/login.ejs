@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/Stylesheets/login.css">
+    <title><%= typeof title !== 'undefined' ? title : 'Login' %></title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
     <div class="auth-container">
@@ -11,8 +11,8 @@
             <h1>Login</h1>
             <p class="subtitle">Welcome back! Sign in to your inventory account.</p>
 
-            <% if (error) { %>
-                <div class="error"><%= error %></div>
+            <% if (typeof error !== 'undefined' && error) { %>
+                <div class="error"><%- error %></div>
             <% } %>
 
             <form action="/login" method="POST" class="auth-form">
@@ -30,7 +30,7 @@
             </form>
 
             <p class="switch-link">
-                Don’t have an account? <a href="/register">Register here</a>
+                Don't have an account? <a href="/register">Register here</a>
             </p>
         </div>
     </div>
